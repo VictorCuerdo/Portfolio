@@ -53,11 +53,14 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hi! I'm Victor,`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-              </div>}
+    <span className="tagline">Welcome to my Portfolio</span>
+    <h1>Hi! I'm <span className="victor-highlight">Victor</span>, <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+    <p>Passionate and <span className="purpleletters-highlight"> multilingual</span> technology professional. My career spans roles as diverse as <span className="purpleletters-highlight"> Application</span> Development Engineer, <span className="purpleletters-highlight"> DevOps</span> Engineer, Junior <span className="purpleletters-highlight"> Web </span> Developer, and Systems <span className="purpleletters-highlight"> Architect </span>, where I've launched successful 
+     cross-platform <span className="purpleletters-highlight"> apps</span>, enhanced IT infrastructure, and improved app performance.</p>
+    <p>With a degree in Computer Science & Systems Engineering, I bring a strong foundation and a global perspective to my work. My journey in tech is driven by a passion for <span className="purpleletters-highlight">growth</span>, <span className="purpleletters-highlight">efficiency</span>, and <span className="purpleletters-highlight">innovative solutions</span>. I'm adept at embracing new technologies, solving complex problems, and delivering user-centric solutions.</p>
+    <button onClick={() => window.open('https://www.linkedin.com/in/vcuerdo/', '_blank')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+</div>
+}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>

@@ -1,4 +1,7 @@
-/************ Custom Font ************/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
 	font-family: Centra;
 	src: url('./assets/font/CentraNo2-Bold.ttf');
@@ -14,19 +17,15 @@
 	src: url('./assets/font/CentraNo2-Book.ttf');
 	font-weight: 400;
 }
-
-/************ Default Css ************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
-
 body {
   font-weight: 400;
   overflow-x: hidden;
@@ -35,53 +34,43 @@ body {
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
 }
-
 p, a, li, button, ul {
   margin: 0;
   padding: 0;
   line-height: normal;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: none;
 }
-
 img {
   width: 100%;
   height: auto;
 }
-
 button {
   border: 0;
   background-color: transparent;
 }
-
 input:focus, textarea:focus, select:focus {
   outline: none;
 }
-
 @media (min-width:1700px) {
 	main .container {
 		max-width: 100%;
 		padding: 0 150px;
 	}
 }
-
 p.success {
 	color: green;
 }
-
 p.danger {
 	color: red;
 }
-/************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -115,7 +104,7 @@ span.navbar-text {
 }
 .social-icon {
     display: inline-block;
-    margin-left: 14px;
+    margin-left: 24px;
 }
 .social-icon a {
     width: 42px;
@@ -143,7 +132,7 @@ span.navbar-text {
     transform: scale(1);
 }
 .social-icon a img {
-	width: 40%;
+	width: 50%;
 	z-index: 1;
 	transition: 0.3s ease-in-out;
 }
@@ -229,8 +218,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
-
-/************ Banner Css ************/
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
@@ -299,8 +286,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
-
-/************ Skills Css ************/
 .skill {
   padding: 0 0 50px 0;
   position: relative;
@@ -339,48 +324,46 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
-
-/************ Projects Section Responsive CSS ************/
-
 .project {
   padding: 80px 0;
   position: relative;
   background-color: black;
 }
-
 .project h2 {
-  font-size: 2.5rem; /* Responsive font size */
+  font-size: 3rem; 
   font-weight: 700;
   text-align: center;
+  
 }
+
+.project-row {
+  margin-bottom: 100px; /* Adjust the value as needed */
+}
+
 
 .project p {
   color: #B8B8B8;
-  font-size: 1.125rem; /* Responsive font size */
+  font-size: 1.125rem; 
   letter-spacing: 0.8px;
   line-height: 1.5em;
   margin: 14px auto 30px;
   text-align: center;
-  width: 90%; /* Increase width for better readability on small screens */
-  max-width: 600px; /* Ensures the paragraph doesn't get too wide on larger screens */
+  width: 90%; 
+  max-width: 600px; 
 }
-
-/* Nav Pills */
 .project .nav.nav-pills {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
-  justify-content: center; /* Center the tabs */
-  gap: 0.5rem; /* Add some space between wrapped tabs */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 0.5rem;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.1);
 }
-
 .project .nav.nav-pills .nav-item {
   flex-grow: 1;
   text-align: center;
 }
-
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   padding: 1rem 0.5rem; /* Adjust padding */
@@ -389,65 +372,72 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
   display: block; /* Ensure proper display */
 }
-
-/* Adjustments for nav-link active state and hover effects remain the same */
-
-/* Project Images and Text Overlay Responsive Adjustments */
 .proj-imgbx {
   position: relative;
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  text-align: center;
 }
-
+/* Define the hover state */
+.proj-imgbx img:hover {
+  transform: scale(1.1); /* Scales the image up to 105% of its original size */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25); /* Adds a shadow effect */
+}
+.proj-imgbx img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: auto; 
+  max-height: 50vh; 
+  object-fit: contain;
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
 .proj-imgbx::before,
 .proj-txtx {
+ 
+  padding: 10px 0; /* Add some padding */
   transition: 0.4s ease-in-out;
+  
 }
 
-.proj-txtx h4,
+
 .proj-txtx span {
   transition: 0.5s;
+  opacity: 0.6;
+}
+/* Target the h4 tag specifically for the title */
+.proj-txtx h4 {
+  font-size: 1.5rem; 
+  opacity: 1; /* Full opacity for the title */
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 768px) {
   .project h2,
   .project p {
-    font-size: 1.5rem; /* Adjust font size */
+    font-size: 1.5rem;
   }
-
   .project .nav.nav-pills .nav-link {
-    padding: 10px 5px; /* Reduce padding */
-    font-size: 0.875rem; /* Reduce font size for nav links */
+    padding: 10px 5px; 
+    font-size: 0.875rem;
   }
-
-  .proj-txtx h4 {
-    font-size: 1.25rem; /* Adjust font size for project titles */
-  }
-
+ 
   .proj-txtx span {
-    font-size: 0.875rem; /* Adjust font size for project descriptions */
+    font-size: 0.875rem; 
   }
 }
-
-
-
-/************ Projects Section Responsive and Compact Tabs ************/
-
 .project {
   padding: 80px 0;
   position: relative;
   background-color: black;
 }
-
 .project h2 {
   font-size: 45px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 30px; /* Adjusted bottom margin for spacing */
+  margin-bottom: 30px; 
 }
-
 .project p {
   color: #B8B8B8;
   font-size: 18px;
@@ -457,22 +447,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   width: 56%;
 }
-
 .project .nav.nav-pills {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping */
-  justify-content: center; /* Center items */
-  gap: 2px; /* Gap for visual separation */
+  flex-wrap: nowrap; 
+  justify-content: center; 
+  gap: 2px; 
   margin: 20px auto;
   overflow: hidden;
 }
-
 .project .nav.nav-pills .nav-item {
-  flex: 1; /* Distribute space evenly */
+  flex: 1; 
   text-align: center;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap; 
 }
-
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
@@ -487,12 +474,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   z-index: 0;
 }
-
 .project .nav.nav-pills .nav-item:first-child .nav-link {
- border-left: none; /* Remove left border for the first tab */
+ border-left: none; 
 }
-
-/* Gradient effect for hover and active state */
 .project .nav.nav-pills .nav-link::before {
   content: '';
   position: absolute;
@@ -502,65 +486,191 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   bottom: 0;
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   z-index: -1;
-  opacity: 0; /* Hidden initially */
+  opacity: 0; 
   transition: 0.3s ease-in-out;
   
 }
-
 .project .nav.nav-pills .nav-link:hover::before,
 .project .nav.nav-pills .nav-link.active::before {
-  opacity: 1; /* Show gradient on hover and when active */
+  opacity: 1; 
 }
-
 .project .nav.nav-pills .nav-link.active {
   border: 1.5px solid rgba(255, 255, 255, 1);
   
 }
-
-/* Responsive Adjustments */
 @media (max-width: 992px) {
   .project h2 {
     font-size: 2rem;
   }
-
   .project p {
     font-size: 1rem;
     width: 80%;
   }
-
   .project .nav.nav-pills .nav-link {
-    font-size: 0.85rem; /* Slightly smaller font size */
-    padding: 10px 4px; /* Slightly reduced padding */
+    font-size: 0.85rem; 
+    padding: 10px 4px; 
   }
 }
-
 @media (max-width: 768px) {
   .project .nav.nav-pills {
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap; 
   }
-
   .project .nav.nav-pills .nav-link {
-    font-size: 0.8rem; /* Further reduce font size */
-    padding: 8px 2px; /* Further reduced padding */
+    font-size: 0.8rem; 
+    padding: 8px 2px;
   }
 }
-
 @media (max-width: 576px) {
   .project h2 {
     font-size: 1.5rem;
   }
-
   .project p {
     font-size: 0.85rem;
     width: 100%;
   }
-
   .project .nav.nav-pills .nav-link {
-    padding: 8px 2px; /* Consistent with above */
-    font-size: 0.75rem; /* Smallest font size for very small screens */
+    padding: 8px 2px; 
+    font-size: 0.75rem; 
   }
 }
 
+.justify-text {
+  text-align: justify;
+}
+
+.proj-imgbx:hover .tap-me {
+  opacity: 1; /* Full opacity when the card is hovered */
+  color: #fff;
+ 
+}
+
+.tap-me {
+  
+  position: absolute;
+  opacity: 0.6;
+  top: 50%; /* Center vertically in the card */
+  left: 50%; /* Center horizontally in the card */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */ 
+  color: #fff;
+  /*color: #EABE6C; /* Text color */
+  font-size: 20px; /* Font size */
+  font-weight: bold; 
+  text-align: center;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; /* Outline effect */
+  pointer-events: none; /* Prevents the text from interfering with click events */
+  z-index: 10; /* Ensure it's above the image */
+}
+
+.proj-icons svg {
+  font-size: 30px; /* Adjust as needed */
+  color: #fff; /* Adjust as needed */
+  width: 35px; /* Adjust as needed */
+  height: 35px; /* Adjust as needed */
+  padding: 2.5px;
+  margin-bottom:50 ; 
+  
+}
+
+/* Style for the icon containers */
+.tech-icon {
+  
+  /* justify-content: center; */
+  align-items: center; 
+   margin: 0.3px; /* Adjust spacing around icons as needed */
+  display: inline-flex;
+  transition: transform 0.3s ease-in-out; /* Smooth transformation on hover */
+}
+
+/* Hover effect for the icons */
+.tech-icon:hover {
+  transform: scale(1.4); /* Enlarges the icon to 120% of its original size on hover */
+}
+
+  /* Carousel adjustments for a balanced view */
+.carousel-inner {
+  height: auto; /* Allow height to adjust based on the image */
+  max-height: 75vh; /* Limit maximum height to ensure it fits within the viewport */
+}
+
+/* ProjectCard.css */
+.tech-stack-label {
+  color: #fff; /* Updated color */
+  font-weight: bold; 
+  font-style: italic;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #9E3584 !important; /* Adjust the color as needed for visibility */
+  size: 30px !important;
+  font-size: 30px !important; /* Increase the font size as needed */
+  z-index: 100 !important; /* Ensure arrows are above other content */
+}
+
+.carousel-item img {
+  max-width: 100%;
+  max-height: 70vh; /* Limit image height to prevent overflow */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Fit the image within the container without cropping */
+  margin: auto; /* Center the image within the carousel item */
+}
+
+/* Ensuring the carousel is fully responsive */
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 50vh; /* Adjust max height for medium devices */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 40vh; /* Adjust max height for small devices */
+  }
+}
+
+
+/* Style for all dots in react-slick */
+/* Ensure any pseudo-elements on the dots are neutralized */
+.slick-dots li button:before,
+.slick-dots li button:after {
+  content: none; /* Or 'display: none;' depending on what works best */
+}
+
+/* Revised custom styling for all dots */
+.slick-dots li button {
+  width: 20px; /* Width of dots */
+  height: 20px; /* Height of dots */
+  border-radius: 50%; /* Ensures dots are round */
+  border: 2px solid #000; /* Border for visibility */
+  display: inline-flex; /* Center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 5px; /* Spacing between dots */
+  padding: 0; /* No padding needed */
+  background-color: #fff; /* Default dot color */
+  opacity: 0.75; /* Slightly transparent by default */
+  position: relative; /* For positioning pseudo-elements, if any */
+  overflow: hidden; /* Prevents any part of pseudo-elements from being visible */
+}
+
+/* Active dot styling */
+.slick-dots li.slick-active button {
+  background-color: #ff2e5f; /* Bright color for active dot */
+  border-color: #ff2e5f; /* Same color border for consistency */
+  opacity: 1; /* Full opacity for visibility */
+}
+
+
+/* Increase arrow size */
+.slick-prev, .slick-next {
+  font-size: 30px; /* Adjust size as needed */
+}
+
+
+/*   next component  */
 .background-image-right {
   top: 20%;
   position: absolute;
@@ -569,11 +679,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   right: 0;
   z-index: -4;
 }
-
-
-/* Ensure any additional styles for .proj-imgbx, .proj-txtx, and .contact sections are included */
-
-/************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #01204C -5.91%, #4A2FBD 111.58%);
   padding: 60px 0 200px 0;
@@ -644,70 +749,56 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact form button:hover::before {
   width: 100%;
 }
-
-
-
-/*********************MODAL********************/
-/* Project Modal custom styles */
 .project-modal-content {
-  background-color: #333; /* Dark background for contrast */
-  color: #fff; /* White text for visibility */
+  background-color: #333; 
+  color: #fff; 
 }
-
 .project-modal-header,
 .project-modal-body {
-  border-bottom: 1px solid #444; /* Add some border to distinguish sections */
+  border-bottom: 1px solid #444;
 }
-
 .project-modal-title {
-  color: #FFD700; /* Gold color for titles, adjust as needed */
+  color: #FFD700; 
 }
-
 .technologies-used h5,
 .technologies-used ul {
-  color: #FFD700; /* Ensuring technology list is visible */
+  color: #FFD700; 
 }
-
 .technologies-used ul li {
-  list-style-type: none; /* Remove list bullet points */
-  margin-bottom: 5px; /* Spacing between items */
+  list-style-type: none; 
+  margin-bottom: 5px; 
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .project-modal-title {
-    font-size: 20px; /* Smaller font size for mobile */
+    font-size: 20px; 
   }
-
   .technologies-used h5 {
-    font-size: 18px; /* Smaller font size for headings */
+    font-size: 18px; 
   }
-
   .technologies-used ul li {
-    font-size: 16px; /* Smaller font size for list items */
+    font-size: 16px; 
   }
 }
-
 @media (max-width: 576px) {
   .project-modal-content {
-    padding: 15px; /* Reduced padding for smaller screens */
+    padding: 15px;
   }
-  
   .project-modal-title,
   .technologies-used h5,
   .technologies-used ul li {
-    font-size: 14px; /* Even smaller font sizes for very small screens */
+    font-size: 14px;
   }
 }
 
-/******************CARRUSEL*********************/
-.carousel img {
-  max-width: 100%;
-  height: auto; /* Ensure the height scales with the width */
-  object-fit: cover; /* Cover ensures the aspect ratio is maintained without stretching */
+.purpleletters-highlight{
+   color: #9195F6;
+  /* color: #836FFF; */
+  font-weight: 700;
+}
+.victor-highlight {
+  color: #FDA403; /* This is the specified color */
 }
 
-/************ Footer Css ************/
 .footer {
   padding: 0 0 50px 0;
   background-image: url('./assets/img/footer-bg.png');
@@ -776,7 +867,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 18px;
 }
 .footer img {
-  width: 26%;
+  width: 10%;
 }
 .footer p {
   font-weight: 400;
@@ -784,4 +875,647 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+
+
+/** VERTICAL TIMELINE */
+/* Remove the color property from here to avoid global color application */
+.vertical-timeline-element {
+  position: relative;
+  margin: 2em 0;
+}
+
+/* Now, define styles for each specific class */
+.vertical-timeline-element-title {
+  color: black; /* Example color - adjust as needed */
+  margin: 0;
+  font-weight: bold;
+  font-size: 23px; /* Example size - adjust as needed */
+}
+
+.vertical-timeline-element-subtitle {
+  color: #707070; /* Example color - adjust as needed */
+  margin: 0;
+  font-size: 13px; /* Example size - adjust as needed */
+}
+
+.vertical-timeline-element-description {
+  color: #505050; /* Example color - adjust as needed */
+  margin: 1em 0 0;
+  line-height: 1.6;
+  font-size: 16px; /* Example size - adjust as needed */
+}
+
+.vertical-timeline-element-date {
+  color: #FDA403; /* Example color - adjust as needed */
+  float: left; /* Keeps existing alignment */
+  padding: .8em 0;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+/* Remember to adjust these styles as per your design requirements */
+
+.vertical-timeline-element > div {
+  min-height: 1px;
+}
+.vertical-timeline-element:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.vertical-timeline-element:first-child {
+  margin-top: 0;
+}
+.vertical-timeline-element:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline-element {
+    margin: 4em 0;
+  }
+  .vertical-timeline-element:first-child {
+    margin-top: 0;
+  }
+  .vertical-timeline-element:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.vertical-timeline-element-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.vertical-timeline-element-icon.shadow-size-small {
+  box-shadow: 0 0 0 2px white, inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.vertical-timeline-element-icon.shadow-size-medium {
+  box-shadow: 0 0 0 3px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+.vertical-timeline-element-icon.shadow-size-large {
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 4px 0 6px rgba(0, 0, 0, 0.05);
+}
+.vertical-timeline--one-column-right .vertical-timeline-element-icon {
+  right: 0;
+  left: unset;
+}
+
+.vertical-timeline-element-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns .vertical-timeline-element-icon {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+  }
+}
+
+/* Icon animations */
+.vertical-timeline-element-icon {
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+.vertical-timeline--animate .vertical-timeline-element-icon.is-hidden {
+  visibility: hidden;
+}
+.vertical-timeline--animate .vertical-timeline-element-icon.bounce-in {
+  visibility: visible;
+  -webkit-animation: cd-bounce-1 0.6s;
+  -moz-animation: cd-bounce-1 0.6s;
+  animation: cd-bounce-1 0.6s;
+}
+
+@-webkit-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: scale(1.2);
+  }
+
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+@keyframes cd-bounce-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.vertical-timeline-element-content {
+  position: relative;
+  margin-left: 60px;
+  background: #fff;
+  opacity: 0.9;
+  border-radius: 0.25em;
+  padding: 1em;
+  box-shadow: 0 3px 0 #ddd;
+}
+
+.vertical-timeline--one-column-right .vertical-timeline-element-content {
+  margin-right: 60px;
+  margin-left: unset;
+}
+
+.vertical-timeline-element--no-children .vertical-timeline-element-content {
+  background: transparent;
+  box-shadow: none;
+}
+.vertical-timeline-element-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.vertical-timeline-element-content h2 {
+  color: #303e49;
+}
+.vertical-timeline-element-content p, .vertical-timeline-element-content .vertical-timeline-element-date {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.vertical-timeline-element-content .vertical-timeline-element-date {
+  display: inline-block;
+}
+.vertical-timeline-element-content p {
+  margin: 1em 0 0;
+  line-height: 1.6;
+}
+
+.vertical-timeline-element-title {
+  margin: 0;
+}
+
+.vertical-timeline-element-subtitle {
+  margin: 0;
+}
+
+.vertical-timeline-element-content .vertical-timeline-element-date {
+  float: left;
+  padding: .8em 0;
+  opacity: .7;
+}
+.vertical-timeline-element-content-arrow {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid white;
+
+}
+
+.vertical-timeline--one-column-right .vertical-timeline-element-content-arrow {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: unset;
+  left: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-left: 7px solid white;
+}
+
+.vertical-timeline--one-column-right .vertical-timeline-element-content::before {
+  left: 100%;
+  border-left: 7px solid white;
+  border-right: unset;
+}
+
+.vertical-timeline-element--no-children .vertical-timeline-element-content::before {
+  display: none;
+}
+
+.vertical-timeline-element--no-children .vertical-timeline-element-content-arrow {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .vertical-timeline-element-content h2 {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+  .vertical-timeline-element-content p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .vertical-timeline-element-content .vertical-timeline-element-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns .vertical-timeline-element-content {
+    margin-left: 0;
+    padding: 1.5em;
+    width: 44%;
+  }
+  .vertical-timeline--two-columns .vertical-timeline-element-content-arrow {
+    top: 24px;
+    left: 100%;
+    transform: rotate(180deg);
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+    position: absolute;
+    width: 100%;
+    left: 124%;
+    top: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content,
+  .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content {
+    float: right;
+  }
+  .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content-arrow,
+  .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content-arrow {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    transform: rotate(0deg);
+  }
+
+  .vertical-timeline--one-column-right .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content-arrow,
+  .vertical-timeline--one-column-right .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content-arrow {
+    top: 24px;
+    left: 100%;
+    right: auto;
+    transform: rotate(0deg);
+  }
+
+  .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date,
+  .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content .vertical-timeline-element-date {
+    left: auto;
+    right: 124%;
+    text-align: right;
+  }
+}
+
+/* Box animations */
+.vertical-timeline--animate .vertical-timeline-element-content.is-hidden {
+  visibility: hidden;
+}
+.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+  visibility: visible;
+  -webkit-animation: cd-bounce-2 0.6s;
+  -moz-animation: cd-bounce-2 0.6s;
+  animation: cd-bounce-2 0.6s;
+}
+
+@media only screen and (min-width: 1170px) {
+  /* inverse bounce effect on even content blocks */
+  .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content.bounce-in,
+  .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content.bounce-in {
+    -webkit-animation: cd-bounce-2-inverse 0.6s;
+    -moz-animation: cd-bounce-2-inverse 0.6s;
+    animation: cd-bounce-2-inverse 0.6s;
+  }
+}
+
+@media only screen and (max-width: 1169px) {
+  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+    visibility: visible;
+    -webkit-animation: cd-bounce-2-inverse 0.6s;
+    -moz-animation: cd-bounce-2-inverse 0.6s;
+    animation: cd-bounce-2-inverse 0.6s;
+  }
+}
+
+@-webkit-keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(20px);
+  }
+
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@keyframes cd-bounce-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -moz-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    -o-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    -o-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(-20px);
+  }
+
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+@keyframes cd-bounce-2-inverse {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    -moz-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    -o-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    -o-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.vertical-timeline * {
+  box-sizing: border-box;
+}
+
+.vertical-timeline {
+  width: 95%;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2em 0;
+}
+.vertical-timeline::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.vertical-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: var(--line-color);
+}
+
+.vertical-timeline.vertical-timeline--one-column-right::before {
+  right: 18px;
+  left: unset;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline.vertical-timeline--two-columns {
+    width: 90%;
+  }
+  .vertical-timeline.vertical-timeline--two-columns:before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+/* Additional styles for the timeline section */
+.timeline-section {
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 2em; /* Adjust spacing as needed */
+}
+
+
+.marquee-title {
+  font-size: 3rem; /* Large, centered text */
+  margin: 1rem 0; /* Spacing around the title */
+  font-weight: 900;
+  color: #fff;
+  margin-top: auto;
+   
+}
+
+.timeline-title {
+  font-size: 2.5rem; /* Large, centered text */
+  margin: 1rem 0; /* Spacing around the title */
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-title {
+    font-size: 2rem; /* Slightly smaller font size on smaller screens */
+  }
+}
+
+/* Ensure existing styles are correctly applied, especially for responsiveness */
+.vertical-timeline {
+  padding-top: 2em; /* Additional padding to separate from the title */
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline--two-columns:before {
+    left: calc(50% - 2px); /* Ensure the line aligns correctly in the center */
+  }
+}
+
+
+/* MARQUEE OF ICONS */
+
+.icon-marquee-section {
+  text-align: center;
+  margin-bottom: 25px; 
+  /* background: linear-gradient(90.21deg, #A43580 -5.91%, #4A2FBD 111.58%); */
+  background-color: #151515; 
+  opacity: 0.6;
+}
+
+.marquee-title {
+  
+  font-size: 2rem; /* Title size */
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon-marquee-container {
+  overflow: hidden;
+  padding: 30px 0; /* Top and bottom padding increased for overall container */
+  margin-bottom: -25px; /* Increased bottom space to separate from next section */
+  margin-top: 30px;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  width: calc(200%); /* Example: adjust based on your content */
+  margin-bottom: 50px; /* Added to only the first row; remove from the second if needed */
+}
+
+.scroll-left {
+  animation-name: scrollLeft;
+  animation-duration: 35s;
+}
+
+.scroll-right {
+  animation-name: scrollRight;
+  direction: rtl; /* Reverse the direction for the right scroll */
+  animation-duration: 35s;
+}
+
+.marquee-icon {
+  font-size: 60px; /* Icon size increased */
+  padding: 0 30px; /* Spacing between icons increased */
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Ensure the last scrolling-wrapper doesn't have a bottom margin */
+.scrolling-wrapper:last-child {
+  margin-bottom: 0;
+}
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* Ensure the wrapper is wide enough for a continuous loop */
+  width: calc(200%); /* Example: adjust based on your content */
 }
